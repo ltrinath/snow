@@ -1,0 +1,14 @@
+var chld = source.u_runs_on__fqdn_.toString();
+
+if (chld != '') { //When child is filled in
+    var gr = new GlideRecord('cmdb_rel_type');
+	var testUi;
+	gr.addQuery('name','Runs on::Runs');
+	gr.query();
+    if (gr.next()) {
+        target.type = gr.sys_id;
+    }
+}
+else {
+    ignore = true;
+}
